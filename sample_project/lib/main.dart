@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 
 // mainが1番初めに呼ばれるところ
 void main() {
-  runApp(const MyApp());                      // runAppは引数必須
+  runApp(const MyApp());                        // runAppは引数必須
 }
 
-class MyApp extends StatelessWidget {
+// StatelessWidgetはbuild関数必須らしい
+class MyApp extends StatelessWidget {           // class A extends B  はBを継承したA
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
-  @override
+  @override                                     // StatelessWidgetに必要なbuild関数をオーバーライドする
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp(                         // MaterialAppをreturnする
+      // A:B のA部はMaterialAppに用意されているもの
+      title: 'Flutter Demo',                    // タブに表示されるもの
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),        // 実際にアプリ内に表示するwidgetを設定する
     );
   }
 }
