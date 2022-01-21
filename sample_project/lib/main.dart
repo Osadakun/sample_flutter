@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {           // class A extends B  はBを継
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),        // 実際にアプリ内に表示するwidgetを設定する
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),        // 実際にアプリ内に表示するwidgetを設定する．
     );
   }
 }
