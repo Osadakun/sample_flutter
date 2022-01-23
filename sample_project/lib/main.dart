@@ -2,21 +2,24 @@ import 'package:flutter/material.dart';
 
 // mainが1番初めに呼ばれるところ
 void main() {
-  runApp(MyApp());                        // runAppは引数必須
+  runApp(MyApp()); // runAppは引数必須
 }
 
 // StatelessWidgetはbuild関数必須らしい
-class MyApp extends StatelessWidget {           // class A extends B  はBを継承したA
+class MyApp extends StatelessWidget {
+  // class A extends B  はBを継承したA
   // This widget is the root of your application.
-  @override                                     // StatelessWidgetに必要なbuild関数をオーバーライドする
+  @override // StatelessWidgetに必要なbuild関数をオーバーライドする
   Widget build(BuildContext context) {
-    return MaterialApp(                         // MaterialAppをreturnする
+    return MaterialApp(
+      // MaterialAppをreturnする
       // A:B のA部はMaterialAppに用意されているもの
-      title: 'Flutter Demo',                    // タブに表示されるもの
+      title: 'Flutter Demo', // タブに表示されるもの
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),        // 実際にアプリ内に表示するwidgetを設定する．
+      home: const MyHomePage(
+          title: 'Flutter Demo Home Page'), // 実際にアプリ内に表示するwidgetを設定する．
     );
   }
 }
@@ -27,6 +30,7 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -39,28 +43,36 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: Column(children: [
+          Text("初めてのテキスト"), 
+            Text("2番目のテキスト")
+        ]
+        )
+    );       // この2つのテキストはColumnの子要素になる
   }
+  // body: Center(
+  //   child: Column(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //     children: <Widget>[
+  //       const Text(
+  //         'You have pushed the button this many times:',
+  //       ),
+  //       Text(
+  //         '$_counter',
+  //         style: Theme.of(context).textTheme.headline4,
+  //       ),
+  //     ],
+  //   ),
+  // ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: _incrementCounter,
+//         tooltip: 'Increment',
+//         child: const Icon(Icons.add),
+//       ), // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }
 }
