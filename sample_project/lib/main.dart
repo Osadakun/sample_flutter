@@ -33,51 +33,47 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _type = "偶数";
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      if (_counter % 2 == 0) {
+        _type = "偶数";
+      } else {
+        _type = "奇数";
+      }
     });
   }
-
   @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Row(children: [
-        Icon(Icons.create),
-        Text("初めてのタイトル"),
-      ]
-      )
-    ),
-    drawer: Drawer(child: Center(child: Text("Drawer"))),
-    body: Text("初めてのテキスト"),
-    floatingActionButton: FloatingActionButton(
-      onPressed: () => {print("押したね？")},
-      child: Icon(Icons.timer),
-    ),
-  );
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title)
+        ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            if (_counter % 2 == 0)
+              Text('偶数です', style: TextStyle(fontSize: 20, color: Colors.red)),
+            if (_counter % 2 == 1)
+              Text('奇数です', style: TextStyle(fontSize: 20, color: Colors.red)),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
 }
-  // body: Center(
-  //   child: Column(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     children: <Widget>[
-  //       const Text(
-  //         'You have pushed the button this many times:',
-  //       ),
-  //       Text(
-  //         '$_counter',
-  //         style: Theme.of(context).textTheme.headline4,
-  //       ),
-  //     ],
-  //   ),
-  // ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: const Icon(Icons.add),
-//       ), // This trailing comma makes auto-formatting nicer for build methods.
-//     );
-//   }
-// }
 }
