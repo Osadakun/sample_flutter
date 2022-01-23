@@ -47,8 +47,32 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Column(children: [
-          Text("初めてのテキスト"), 
-            Text("2番目のテキスト")
+          Text("初めてのテキスト"),
+          Text("2番目のテキスト"),
+          TextButton(
+            onPressed: () => {print("ボタンが押されたよ")},         // ターミナルに表示されるからデバッグに使える
+            child: Text("更新"),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(
+                Icons.favorite,
+                color: Colors.pink,
+                size: 24.0,
+              ),
+              Icon(
+                Icons.audiotrack,
+                color: Colors.green,
+                size: 30.0,
+              ),
+              Icon(
+                Icons.beach_access,
+                color: Colors.blue,
+                size: 36.0,
+              ),
+            ],
+          )
         ]
         )
     );       // この2つのテキストはColumnの子要素になる
