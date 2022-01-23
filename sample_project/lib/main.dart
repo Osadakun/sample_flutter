@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 // mainが1番初めに呼ばれるところ
 void main() {
   runApp(MyApp()); // runAppは引数必須

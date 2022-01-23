@@ -29,6 +29,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: ^2.0.12
+  url_launcher: ^6.0.18
+  flutter_launcher_icons: "^0.9.2"
+
+flutter_icons:
+  android: true
+  ios: true
+  adaptive_icon_background: "#FF4CAF50"
+  image_path: "/Users/onotoshiki/Code/zemi/flutter_sample/sample_project/assets/icon/new.png"
 
 
   # The following adds the Cupertino Icons font to your application.
