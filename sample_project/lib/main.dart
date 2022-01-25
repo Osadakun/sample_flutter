@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'async_sample/Async.dart';
 void main() {
-runApp(MyApp());
+  runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
-    Async().asynctest1(); // 2-4も同様にここで呼び出す
+    Async().asynctest3(); // 2-4も同様にここで呼び出す
   }
   @override
   Widget build(BuildContext context) {
